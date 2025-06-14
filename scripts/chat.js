@@ -2,7 +2,7 @@ const chat = document.getElementById("chat");
 const form = document.getElementById("chat-form");
 const input = document.getElementById("message-input");
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 // Histórico da conversa para manter o contexto
 let conversationHistory = [
