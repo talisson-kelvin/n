@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SaúdeJá - Chat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    .message {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-blue-50 min-h-screen flex flex-col">
+  <!-- Cabeçalho -->
+  <header class="bg-blue-600 text-white p-4 flex items-center justify-between shadow-md">
+    <div class="flex items-center gap-2">
+      <img src="assets/logo.png" alt="Logo" class="w-10 h-10 rounded-full bg-white p-1" />
+      <h1 class="text-xl font-semibold">SaúdeJá AI</h1>
+    </div>
+    <a href="index.html" class="hover:underline">↩ Voltar</a>
+  </header>
+
+  <!-- Área de mensagens -->
+  <main id="chat" class="flex-1 overflow-y-auto p-4 space-y-4">
+    <div class="message max-w-[70%] bg-white p-3 rounded-xl shadow-sm text-gray-800">Olá! 👋 Sou sua assistente virtual. Como posso te ajudar hoje?</div>
+  </main>
+
+  <!-- Campo de digitação -->
+  <form id="chat-form" class="p-4 flex gap-2 bg-white shadow-inner">
+    <input id="message-input" type="text" placeholder="Digite sua mensagem..." class="flex-1 p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl transition-all">Enviar</button>
+  </form>
+
+  <script src="scripts/chat.js"></script>
+</body>
+</html>
