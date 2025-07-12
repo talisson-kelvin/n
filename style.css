@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('fundo-teia.jpg') center/cover no-repeat;
+  position: relative;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  background: url('teia-overlay.png') top left/contain no-repeat;
+  opacity: 0.15;
+  pointer-events: none;
+  animation: girar 60s linear infinite;
+}
+
+@keyframes girar {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.container {
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header .logo {
+  font-size: 2rem;
+  color: #e62429;
+  text-align: center;
+  margin-top: 1rem;
+  animation: pulse 2s infinite;
+}
+
+.quadro {
+  background: #111;
+  border: 2px dashed #e62429;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 0 10px rgba(230, 36, 41, 0.5);
+  animation: fadeIn 2s ease-out;
+}
+
+.texto h2 {
+  font-size: 1.5rem;
+  color: #ff4b5c;
+  margin-bottom: 1rem;
+}
+
+.texto p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #e0e0e0;
+}
+
+.assinatura {
+  font-style: italic;
+  text-align: right;
+  color: #ffa4a4;
+}
+
+#botaoCoracao {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #ff4b5c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  box-shadow: 0 0 10px rgba(255, 75, 92, 0.5);
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
