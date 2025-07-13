@@ -22,13 +22,11 @@ heartButton.addEventListener("click", () => {
   alert(frase);
 });
 
-// Botão da Surpresa
 const surpresaBtn = document.getElementById("surpresaButton");
 surpresaBtn.addEventListener("click", () => {
   alert("🌟 SURPRESA 🌟\nVocê é a heroína mais linda de todo o Lalahverso! Obrigada por existir.");
 });
 
-// Botão de Superpoder
 const superBtn = document.getElementById("superButton");
 superBtn.addEventListener("click", () => {
   document.body.classList.add("super-bg");
@@ -37,3 +35,12 @@ superBtn.addEventListener("click", () => {
     document.body.classList.remove("super-bg");
   }, 4000);
 });
+
+function mostrarSecreto() {
+  const mensagem = document.getElementById("mensagemSecreta");
+  mensagem.style.display = "block";
+}
+
+function ativarModoLalah() {
+  alert("✨ Modo Super Lalah ativado! Agora o Lalahverso está cheio de amor, coragem e fofura!");
+}
