@@ -1,32 +1,39 @@
 const frases = [
-  "Você é minha heroína favorita 💙",
-  "Com você tudo é mais divertido 🕷️",
-  "Feliz mesversário, minha Lalah!",
-  "Hoje o mundo é seu!",
-  "Você merece todas as teias do carinho 🕸️",
-  "Sempre estarei aqui por você 💖",
-  "Meu orgulho, minha amiga incrível",
-  "Você ilumina meus dias como a cidade do Aranha ✨",
-  "Tátá te acha o máximo!"
+  "Você é incrível, Lalah!",
+  "Nunca se esqueça de como você é especial.",
+  "Nosso universo é único! 🕸️",
+  "Tátá sempre vai estar aqui por você. 💗",
+  "Feliz mesversário, minha aranha favorita! 🕷️",
+  "Cada detalhe foi feito com carinho só pra você!",
+  "Você é o coração do Lalahverso!",
+  "Tátá te admira muito. Muito mesmo.",
+  "Você é tão única que merecia um universo só seu. E ele existe!",
+  "Nada nesse universo se compara ao brilho que você traz pra minha vida.",
+  "Se eu pudesse, criaria mil versões desse site só pra te fazer sorrir. 💫",
+  "Hoje o Lalahverso brilha só pra você!",
+  "Você tem superpoderes: encanta, acalma e alegra o mundo ao redor.",
+  "Tá tudo aqui porque você merece se sentir amada, sempre.",
+  "Ei Lalah, obrigada por existir no meu universo. 🌟"
 ];
 
-const botao = document.getElementById("botaoCoracao");
-botao.addEventListener("click", () => {
+const heartButton = document.getElementById("heartButton");
+heartButton.addEventListener("click", () => {
   const frase = frases[Math.floor(Math.random() * frases.length)];
-  const bolha = document.createElement("div");
-  bolha.textContent = frase;
-  bolha.style.position = "fixed";
-  bolha.style.bottom = "80px";
-  bolha.style.right = "30px";
-  bolha.style.background = "#222";
-  bolha.style.color = "#fff";
-  bolha.style.padding = "10px 15px";
-  bolha.style.borderRadius = "10px";
-  bolha.style.boxShadow = "0 0 10px rgba(255,255,255,0.3)";
-  bolha.style.zIndex = 9999;
-  document.body.appendChild(bolha);
+  alert(frase);
+});
 
+// Botão da Surpresa
+const surpresaBtn = document.getElementById("surpresaButton");
+surpresaBtn.addEventListener("click", () => {
+  alert("🌟 SURPRESA 🌟\nVocê é a heroína mais linda de todo o Lalahverso! Obrigada por existir.");
+});
+
+// Botão de Superpoder
+const superBtn = document.getElementById("superButton");
+superBtn.addEventListener("click", () => {
+  document.body.classList.add("super-bg");
+  alert("💥 Superpoder Ativado! Agora você emana luz e carinho por onde passa. Continue sendo essa pessoa mágica!");
   setTimeout(() => {
-    bolha.remove();
-  }, 3000);
+    document.body.classList.remove("super-bg");
+  }, 4000);
 });
