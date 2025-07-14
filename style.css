@@ -1,0 +1,123 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://i.pinimg.com/originals/26/01/e4/2601e464005267569a4112d74f1a541b.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  overflow-x: hidden;
+}
+
+#loader {
+  position: fixed;
+  background: black;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 2s ease 3s forwards;
+}
+
+#loader img {
+  width: 80px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 80px;
+  color: #fdd835;
+  text-shadow: 2px 2px 5px black;
+}
+
+.text-box {
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid red;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px red;
+  text-align: justify;
+}
+
+.text-box h2 {
+  color: #ff5722;
+  margin-top: 1em;
+}
+
+#heart-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: red;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 0 10px black;
+  z-index: 10;
+  transition: transform 0.2s;
+}
+
+#heart-button:hover {
+  transform: scale(1.2);
+}
+
+#phrase-box {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  max-width: 300px;
+  padding: 12px;
+  background: #000000c5;
+  border: 2px solid white;
+  border-radius: 10px;
+  font-size: 0.95em;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 0 15px white;
+}
+
+canvas#webCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Aranha descendo */
+.spider {
+  position: fixed;
+  top: -80px;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Spider_icon.svg/2048px-Spider_icon.svg.png') no-repeat center;
+  background-size: contain;
+  animation: dropSpider 6s ease-in-out forwards;
+  z-index: 99;
+}
+
+@keyframes dropSpider {
+  0% { top: -80px; }
+  50% { top: 200px; }
+  100% { top: -80px; }
+}
