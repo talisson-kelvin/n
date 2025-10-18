@@ -1,61 +1,194 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lalahverso 🕸️</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vai Dar Certo - Projeto Clatra</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Loader -->
-  <div id="loader">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Spider-Man_Mask.svg" alt="Spider Mask">
+    <div class="petals"></div>
+
+    <header>
+        <h1>Vai dar certo 🌸</h1>
+        <p>Mesmo que hoje esteja pesado, tudo vai se acalmar. Respira, confia… vai dar certo.</p>
+    </header>
+
+    <section class="sobre">
+        <h2>Sobre você</h2>
+        <p>Você é doce, apaixonada por Fórmula 1, fã de doramas e dona de um sorriso único. Seu cabelo cacheado é como sua essência: cheio de vida, movimento e beleza natural. Mesmo nos dias difíceis, você é luz para quem tem a sorte de estar por perto.</p>
+        <div class="icons">
+            <div class="icon" id="capacete" title="Próxima corrida">🏎️</div>
+            <div class="icon">🎬</div>
+            <div class="icon">💖</div>
+        </div>
+        <p id="proxima-corrida"></p>
+    </section>
+
+    <section class="carta">
+        <h2>Carta aberta para você</h2>
+        <p>Sei que os últimos dias não foram fáceis. Sei que a correria e o peso das responsabilidades te deixam exausta, e que às vezes o coração fica apertado. Mas quero que você lembre de algo: você não precisa ser forte o tempo todo. Pode descansar. Pode sentir. Pode chorar. Não existe problema em ser humana, e você é uma das mais lindas que já conheci. Um dia, quando olhar para trás, vai perceber que tudo que passou foi para te moldar e te preparar para o que vem de bom. E quando esse dia chegar, vai sorrir lembrando que… vai dar certo.</p>
+    </section>
+
+    <section class="desabafar">
+        <h2>Descarregue aqui</h2>
+        <textarea id="desabafo" placeholder="Escreva o que está sentindo..."></textarea>
+        <button onclick="salvarDesabafo()">Salvar</button>
+        <button onclick="limparDesabafo()">Limpar</button>
+        <div id="desabafos-salvos"></div>
+    </section>
+
+    <section class="lembrar">
+        <h2>Coisas que você precisa lembrar</h2>
+        <ul>
+            <li>Você é suficiente, mesmo quando acha que não está fazendo o bastante.</li>
+            <li>Seu jeito doce transforma dias comuns em memórias bonitas.</li>
+            <li>Assim como numa corrida, às vezes é preciso desacelerar para depois acelerar mais forte.</li>
+            <li>As pessoas certas continuam na sua vida, mesmo com o tempo.</li>
+        </ul>
+    </section>
+
+    <section class="cards">
+        <h2>Cenas de dorama</h2>
+        <div class="card-container">
+            <div class="card">
+                <p>"Você é a protagonista da sua história."</p>
+                <span class="dorama">- From “Start-Up”</span>
+            </div>
+            <div class="card">
+                <p>"O destino sempre encontra um jeito de unir as pessoas certas."</p>
+                <span class="dorama">- From “Crash Landing On You”</span>
+            </div>
+            <div class="card">
+                <p>"Até na tempestade, existe beleza."</p>
+                <span class="dorama">- From “It’s Okay to Not Be Okay”</span>
+            </div>
+            <div class="card">
+                <p>"Seu sorriso é a cena que eu nunca me canso de assistir."</p>
+                <span class="dorama">- From “Reply 1988”</span>
+            </div>
+        </div>
+    </section>
+
+    <div id="botao-flutuante" title="Clique para receber uma mensagem ❤️">💖</div>
+    <p id="mensagem-flutuante"></p>
+
+    <section class="biblia">
+        <h2>Palavras reconfortantes</h2>
+        <button id="botao-biblia">📖 Versículo</button>
+        <p id="versiculo"></p>
+    </section>
+
+    <section class="linha-do-tempo">
+        <h2>Mini linha do tempo de corridas</h2>
+        <div class="timeline">
+            <div class="race"> GP Singapura - Mercedes 1º lugar</div>
+            <div class="race"> GP Singapura - Mercedes 5º lugar</div>
+            <div class="race"> GP Singapura - Ferrari 6º lugar</div>
+            <div class="race"> GP Singapura - Ferrari 7º lugar</div>
+        </div>
+    </section>
+
+    <section class="final">
+        <h2>Um dia de cada vez</h2>
+        <p>Você não precisa resolver tudo hoje. Algumas coisas só se encaixam com o tempo, como voltas de uma corrida que parecem longas, mas levam à linha de chegada. Vai dar certo e quando der, você vai entender, cada momento.</p>
+    </section>
+
+    <!-- >>> A PARTIR DAQUI: ADIÇÃO DO NOVO MUNDO MÁGICO (mantive todo o conteúdo acima exatamente igual) -->
+    <!-- Botão no final do site para abrir o Mundo Mágico (tela inteira) -->
+   
+<div class="mundo-final-wrap central-de-modos">
+  <button id="abrirMundoBtn" class="abrir-mundo">Entrar no Mundo Mágico ✨</button>
+  <button id="abrirRespiraBtn" class="abrir-respira">Respira e Recomeça 🌬️</button>
+</div>
+
+<!-- Modal Respira e Recomeça -->
+<div id="respiraModal" class="respira-modal" aria-hidden="true" role="dialog" aria-label="Respira e Recomeça">
+  <div class="respira-topbar">
+    <button id="fecharRespiraBtn" class="fechar-respira">Voltar</button>
   </div>
 
-  <!-- Aranha descendo -->
-  <div class="spider"></div>
+  <div class="respira-content">
+    <h2 class="respira-titulo">Respira e Recomeça 🌸</h2>
+    <p class="respira-desc">Inspira… segura… expira. Cada ciclo é um recomeço tranquilo.</p>
 
-  <!-- Título -->
-  <h1 class="titulo">Lalahverso 🕸️</h1>
+    <!-- 🌬️ NOVO BLOCO DE GUIA DE RESPIRAÇÃO -->
+    <div class="respira-guia">
+      <div class="respira-circulo" id="respiraCirculo"></div>
+      <p id="respiraTexto" class="respira-texto">Pronta?</p>
 
-  <!-- Textos principais -->
-  <div class="text-box">
-    <h2>Para a minha amiga incrível, Lalah</h2>
-    <p>
-      Há alguns mês, nosso laço se fortaleceu. Como o Peter Parker ou o Miles Morales,
-      a nossa conexão transcende distâncias e realidades. Você chegou com seu jeitinho único, divertido,
-      forte e completamente você. Desde então, os dias têm sido mais leves, mais alegres e cheios de aventuras.
-      Você é como uma heroína da vida real e o seu poder é o carinho que transmite. Bem-vinda ao Lalahverso 🕸️ 💥.
-    </p>
+      <div class="botoes-respira">
+        <button id="iniciarRespiraBtn">Começar Respiração 🌿</button>
+        <button id="pararRespiraBtn" style="display:none;">Parar Respiração ❌</button>
+      </div>
 
-    <h2>Nosso elo é como teia: forte, flexível e impossível de quebrar</h2>
-    <p>
-      Mesmo quando o mundo parece de cabeça pra baixo, como o Homem-Aranha pendurado em seus pensamentos,
-      sei que posso contar com você. Nossa amizade é um abrigo, um refúgio, uma história em quadrinhos escrita
-      com risos e confiança. Espero que a cada mês a gente esteja ainda mais conectado. Te admiro demais, Lalah.
-      Sempre estarei aqui, como um verdadeiro amigo-aranha 🕷️ ❤️.
-    </p>
-  </div>
+      <p class="frase-final" id="fraseFinal"></p>
+    </div>
 
-  <!-- Botão coração -->
-  <div id="heart-button" onclick="showPhrase()">❤️</div>
-  <div id="phrase-box"></div>
-  
-  <!-- Botão cartinha -->
-<div id="letter-button">✉️</div>
+    <!-- Painel para escolher som -->
+    <div id="painelSom" class="painel-som">
+      <div class="painel-conteudo">
+        <p>Deseja iniciar com o som ambiente?</p>
+        <div class="painel-botoes">
+          <button id="somSim">Sim 🎧</button>
+          <button id="somNao">Não 🌿</button>
+        </div>
+      </div>
+    </div>
 
-<!-- Carta -->
-<div id="letter-container">
-  <div id="letter">
-    <div class="letter-front"></div>
-    <div class="letter-back">
-      <div id="letter-text"></div>
+    <audio id="audioRespira" src="audio/ruido-marrom.mp3" loop></audio>
+
+    <!-- Mural dos Sonhos (mantido igual) -->
+    <div class="mural-sonhos">
+      <h3>📌 Mural dos Sonhos</h3>
+      <input type="text" id="novaMeta" placeholder="Escreva uma meta ou desejo...">
+      <button id="adicionarMetaBtn">Adicionar</button>
+      <div id="listaMetas"></div>
     </div>
   </div>
 </div>
 
-  <canvas id="webCanvas"></canvas>
 
-  <script src="script.js"></script>
+    <!-- Mundo Mágico Fullscreen -->
+    <div id="mundoMagicoModal" class="mundo-magico-modal" aria-hidden="true" role="dialog" aria-label="Mundo Mágico">
+        <div class="mundo-magico-topbar">
+            <button id="fecharMundoBtn" class="fechar-mundo" aria-label="Fechar mundo">Voltar</button>
+        </div>
+        <div class="mundo-magico-content">
+            <div class="mundo-left">
+                <h2>Noite Mágica</h2>
+                <p class="mundo-desc">Respira. Aqui a noite abraça e as estrelas desenham promessas. Escolha uma música e deixe o coração escutar.</p>
+<div class="playlist">
+    <div class="playlist-controls">
+        <button class="track-btn" data-id="tI9kSZgMLsc">Música 1</button>
+        <button class="track-btn" data-id="lFxXFq2zWOo">Música 2</button>
+        <button class="track-btn" data-id="dIuK5nOZb2o">Música 3</button>
+    </div>
+    <div class="player-frame">
+        <iframe id="ytEmbed" src="https://www.youtube.com/embed/tI9kSZgMLsc?rel=0&autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- ❤️ coração agora bem visível -->
+<div class="mundo-canvas-wrap">
+    <canvas id="mundoCanvas"></canvas>
+</div>
+
+<div class="mundo-textos">
+    <p class="emotional-line" id="e1">"Quando as luzes baixarem, saiba que alguém te vê e te cuida."</p>
+    <p class="emotional-line" id="e2">"Não és sozinha — meu pensamento te acompanha."</p>
+    <p class="emotional-line" id="e3">"Cada noite revela um novo começo."</p>
+</div>
+<div>
+    
+</div>      </div>
+        </div>
+      </div>
+<footer>
+        Feito com carinho 💖 por alguém que acredita em você.
+    </footer>
+
+   
+    <script src="script.js"></script>
 </body>
 </html>
