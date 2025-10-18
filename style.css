@@ -482,3 +482,37 @@ footer {
   .respira-circulo { width: 120px; height: 120px; }
   .respira-texto { font-size: 1rem; }
 }
+
+/* Correção: texto de respiração centralizado abaixo da bola */
+.respira-texto {
+  position: relative;
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* 💨 Correção de alinhamento do texto e espaçamento dos botões */
+.respira-guia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.respira-circulo {
+  margin-bottom: 25px; /* afasta a bola do texto */
+}
+
+.respira-texto {
+  margin-top: 10px;
+  margin-bottom: 25px; /* espaço antes dos botões */
+  text-align: center;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #6b46c1;
+}
+
+.botoes-respira {
+  margin-top: 5px;
+}

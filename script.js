@@ -420,7 +420,7 @@ document.addEventListener('keydown', (e) => {
     respiraCirculo.style.transition = 'transform .6s ease-in-out';
     respiraCirculo.style.transform = 'scale(1)';
     if (fraseFinal) { fraseFinal.style.opacity = 0; }
-    try { if (audioRespira) { audioRespira.pause(); audioRespira.currentTime = 0; } } catch(e){}
+    try { if (audioRespira) { audioRespira.pause(); audioRespira.currentTime = 0; audioRespira.src = audioRespira.src; } } catch(e){}
   }
 
   // Event listeners (guardados com checks de existência)
