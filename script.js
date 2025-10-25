@@ -66,7 +66,7 @@ mostrarDesabafos();
 
 // Próxima corrida ao clicar no capacete
 document.getElementById("capacete").addEventListener("click", () => {
-    const proximaCorrida = "Grande Prêmio dos Estados Unidos - 19 de outubro de 2025 ";
+    const proximaCorrida = "Grande Prêmio do México - 26 de outubro de 2025 ";
     document.getElementById("proxima-corrida").textContent = "🏁 " + proximaCorrida;
 });
 
@@ -511,3 +511,64 @@ adicionarMetaBtn.addEventListener('click', () => {
 });
 
 carregarMetas();
+/* ============================== */
+/* 📚 MODO REVISÃO E AGENDA */
+/* ============================== */
+
+const abrirRevisaoBtn = document.getElementById('abrirRevisaoBtn');
+const fecharRevisaoBtn = document.getElementById('fecharRevisaoBtn');
+const revisaoModal = document.getElementById('revisaoModal');
+
+abrirRevisaoBtn.addEventListener('click', () => {
+  revisaoModal.style.display = 'block';
+  revisaoModal.setAttribute('aria-hidden', 'false');
+});
+
+fecharRevisaoBtn.addEventListener('click', () => {
+  revisaoModal.style.display = 'none';
+  revisaoModal.setAttribute('aria-hidden', 'true');
+});
+
+function abrirMateria(pagina) {
+  window.open(pagina, '_blank');
+}
+
+// Filtro de matérias
+const filtroBtns = document.querySelectorAll('.filtro-btn');
+const cardsMaterias = document.querySelectorAll('.card-materia');
+
+filtroBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filtroBtns.forEach(b => b.classList.remove('ativo'));
+    btn.classList.add('ativo');
+    const filtro = btn.dataset.materia;
+    cardsMaterias.forEach(card => {
+      if (filtro === 'todas' || card.dataset.materia === filtro) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+// --- Trabalhos: marcar como entregue e salvar ---
+document.querySelectorAll('.check-trabalho').forEach((check, index) => {
+  // ao carregar a página, verifica se já estava salvo
+  const salvo = localStorage.getItem(`trabalhoEntregue_${index}`);
+  if (salvo === 'true') {
+    check.checked = true;
+    check.closest('tr').classList.add('entregue');
+  }
+
+  // quando clicar na caixinha
+  check.addEventListener('change', function() {
+    const linha = this.closest('tr');
+    if (this.checked) {
+      linha.classList.add('entregue');
+      localStorage.setItem(`trabalhoEntregue_${index}`, 'true');
+    } else {
+      linha.classList.remove('entregue');
+      localStorage.setItem(`trabalhoEntregue_${index}`, 'false');
+    }
+  });
+});

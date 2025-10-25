@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vai Dar Certo - Projeto Clatra</title>
+    <title>Vai Dar Certo - Projeto Clara</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -100,6 +100,7 @@
 <div class="mundo-final-wrap central-de-modos">
   <button id="abrirMundoBtn" class="abrir-mundo">Entrar no Mundo Mágico ✨</button>
   <button id="abrirRespiraBtn" class="abrir-respira">Respira e Recomeça 🌬️</button>
+  <button id="abrirRevisaoBtn" class="abrir-revisao">📚 Revisão e Agenda</button>
 </div>
 
 <!-- Modal Respira e Recomeça -->
@@ -184,6 +185,96 @@
 </div>      </div>
         </div>
       </div>
+      <!-- 🌸 Modal Revisão e Agenda -->
+<div id="revisaoModal" class="revisao-modal" aria-hidden="true" role="dialog" aria-label="Revisão e Agenda">
+  <div class="revisao-topbar">
+    <button id="fecharRevisaoBtn" class="fechar-revisao">Voltar</button>
+  </div>
+
+  <div class="revisao-content">
+    <h2 class="revisao-titulo">📚 Revisão e Agenda</h2>
+    <p class="revisao-desc">Organize suas provas e trabalhos. Clique nas matérias para ver resumos e revisões completas!</p>
+
+    <div class="tabelas">
+      <h3>🧪 Provas</h3>
+      <table class="tabela-revisao">
+        <tr><th>Dia</th><th>Matéria</th><th>Conteúdo</th></tr>
+        <tr><td>Segunda-feira</td><td>História</td><td>A vinda dos imigrantes para o Brasil, as leis abolicionistas, a Guerra do Paraguai, a lei de terras e a teoria do branqueamento</td></tr>
+        <tr><td>Segunda-feira</td><td>Química</td><td>Termoquímica (todo o conteúdo)</td></tr>
+        <tr><td>Terça-feira</td><td>Filosofia</td><td>Capítulo 15 – Filosofia, Trabalho e Vida (Ênfase em Aristóteles, Karl Marx e Hannah Arendt)</td></tr>
+      </table>
+
+     <h3>📄 Trabalhos</h3>
+<table class="tabela-revisao trabalhos">
+  <tr>
+    <th>Entregue</th>
+    <th>Matéria</th>
+    <th>Tipo</th>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="check-trabalho"></td>
+    <td>Filosofia</td>
+    <td>
+      <a href="https://docs.google.com/document/d/18rw0TxNDw3ZskA2CX4hXfb1T6Uwx3HZO/edit?usp=sharing&ouid=117366784387938265546&rtpof=true&sd=true" target="_blank" class="link-trabalho">
+        Mapa conceitual
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="check-trabalho"></td>
+    <td>Português</td>
+    <td>
+      <a href="https://docs.google.com/document/d/1NieoWDbEdXE0oCOiMYvh6YayH05BgJhKX-YdSYdjdQM/edit?usp=sharing" target="_blank" class="link-trabalho">
+        Debate
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td><input type="checkbox" class="check-trabalho"></td>
+    <td>Inglês</td>
+    <td>
+      <a href="https://docs.google.com/document/d/1VByRhDxt1OgYNCBlg51-8MvUMhjX2E1g/edit?usp=sharing&ouid=117366784387938265546&rtpof=true&sd=true" target="_blank" class="link-trabalho">
+        Folheto de viagem
+      </a>
+    </td>
+  </tr>
+   <tr>
+    <td><input type="checkbox" class="check-trabalho"></td>
+    <td>História</td>
+    <td>
+      <a href="." target="_blank" class="link-trabalho">
+        Jornal(eu acho)
+      </a>
+    </td>
+  </tr>
+</table>
+
+
+    </div>
+
+
+    <div class="cards-materias">
+      <div class="card-materia" data-materia="historia" onclick="abrirMateria('historia.html')">
+        <h4>História</h4>
+        <p>Imigração, abolição e transformações no Brasil.</p>
+        <button>Ver resumo</button>
+      </div>
+
+      <div class="card-materia" data-materia="quimica" onclick="abrirMateria('quimica.html')">
+        <h4>Química</h4>
+        <p>Termoquímica — todo o conteúdo revisado.</p>
+        <button>Ver resumo</button>
+      </div>
+
+      <div class="card-materia" data-materia="filosofia" onclick="abrirMateria('filosofia.html')">
+        <h4>Filosofia</h4>
+        <p>Capítulo 15 — Filosofia, Trabalho e Vida.</p>
+        <button>Ver resumo</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <footer>
         Feito com carinho 💖 por alguém que acredita em você.
     </footer>
